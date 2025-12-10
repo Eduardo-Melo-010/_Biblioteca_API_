@@ -3,32 +3,31 @@ import { Router } from "express";
 import LivroController from "../controllers/livroController";
 
 class LivroRoutes {
-  router = Router();
+  router = Router ();
   controller = new LivroController();
 
-  constructor() {
+  constructor () {
     this.initializeRoutes();
   }
 
   initializeRoutes() {
-    // Criar um novo Livro
-    this.router.post("/create", this.controller.createLivro);
 
-    // Retornar todos os livros
-    this.router.get("/getAll", this.controller.getAllLivros);
+    this.router.post("/livro", this.controller.createLivro);
 
-    // Retorna um livro específico pelo ID
-    this.router.get("/:id", this.controller.getLivroById);
+    this.router.get("/livro", this.controller.getAllLivros);
 
-    // Atualizar um livro pelo ID
-    this.router.put("/update/:id", this.controller.updateLivro);
+    // Retorna um genero específico pelo seu id
+    this.router.get("/livro/:id", this.controller.getLivroById);
 
-    // Deletar um livro pelo ID
-    this.router.delete("/delete/:id", this.controller.deleteLivro);
+    // Atualizar um genero pelo seu id
+    this.router.put("/livro/:id", this.controller.updateLivro);
 
-    // (Opcional) Deletar todos os livros
-    this.router.delete("/deleteAll", this.controller.deleteAllLivros);
+    // Deleta um genero pelo seu id
+    this.router.delete("/livro/:id", this.controller.deleteLivro);
+
+    // Deleta todos os generos
+    this.router.delete("/generos/", this.controller.deleteAllLivros);
   }
 }
+    export default new LivroRoutes().router;
 
-export default new LivroRoutes().router;

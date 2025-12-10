@@ -5,8 +5,7 @@ import livroRoutes from './livroRoutes';
 
 export default class Routes {
   constructor(app: Application) {
-
     app.use('/biblioteca', homeRoutes);
-    app.use('/biblioteca/livro', livroRoutes);
+    app.use('/biblioteca/livro', livroRoutes); // rota final: /biblioteca/livro
   }
 }

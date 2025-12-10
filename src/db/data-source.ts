@@ -11,6 +11,6 @@ export const AppDataSource = new DataSource({
     password: "root",
     database: "biblioteca123",
     entities: [Livro],
-    synchronize: false,
+    synchronize: true,
     logging: false,
 })
